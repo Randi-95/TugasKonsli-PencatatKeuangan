@@ -1,0 +1,121 @@
+.containerTransaksi h2{
+    font-size: 20px;
+    color: #2c3e50;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.containerTransaksi, .riwayatTransaksi{
+    height: 90vh;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 20px;
+    background-color: #f4f6f9;
+}
+body{
+    background-color: #f4f6f9;
+}
+
+.formTambahTransaksi{
+    display: flex;
+    flex-direction: column;
+}
+
+.formTambahTransaksi label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+.formTambahTransaksi input{
+    padding-inline: 8px;
+    height: 30px;
+    border-radius: 6px;
+    border: 1px solid #2c3e50;
+    outline: none;
+}
+
+.formTambahTransaksi input::placeholder{
+    font-size: 12px;
+}
+
+.formTambahTransaksi select{
+    height: 30px;
+    outline: none;
+}
+
+#submit{
+    margin-top: 10px;
+    background-color: #2ecc71;
+    color: white;
+    font-weight: 600;
+    border: none;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+#submit:hover{
+    background-color: #27ae60;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #2c3e50;
+    color: white;
+}
+
+table {
+  width: 100%;          
+  border-collapse: collapse;
+  margin: 0 auto;        
+}
+
+.total-box{
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.riwayatTransaksi h2{
+    font-size: 20px;
+    color: #2c3e50;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btnAksi{
+    display: flex;
+    justify-content: center;
+}
+.btnEdit{
+    cursor: pointer;
+}
+.btnHapus{
+    cursor: pointer;
+}
+
+@media (max-width:  600px){
+    main{
+        grid-template-columns: 1fr;
+    }
+
+    .containerTransaksi, .riwayatTransaksi{
+        height: auto;
+    }
+
+    .riwayatTransaksi{
+        overflow: hidden;
+        overflow-x: auto;
+    }
+}
