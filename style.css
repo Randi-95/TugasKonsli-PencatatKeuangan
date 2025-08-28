@@ -82,6 +82,7 @@ table {
   margin-top: 10px;
   overflow: hidden;
   border-radius: 8px;
+  overflow-x: auto;
 }
 
 th, td {
