@@ -10,6 +10,7 @@ document.querySelector("form[name=formTambahTransaksi]").onsubmit = function(eve
     const inputNamaTransaksi = document.getElementById("nama").value.trim()
     const inputJumlah = document.getElementById("jumlah").value.trim()
     const inputKategori = document.getElementById("kategori").value
+    const inputTanggal = document.getElementById("tanggal").value
 
     if(inputNamaTransaksi == "" || inputJumlah == "" || inputKategori ==""){
         alert("isi form transaksi terlebih dahulu")
@@ -20,7 +21,7 @@ document.querySelector("form[name=formTambahTransaksi]").onsubmit = function(eve
         const isiNamaTransaksi = itemIndex.querySelector(".isiNamaTransaksi")
         const isiKategori = itemIndex.querySelector(".isiKategori")
         const isiJumlah = itemIndex.querySelector(".isiJumlah")
-
+        const isiTanggal = itemIndex.querySelector(".isiTanggal")
 
         const kategoriLama = isiKategori.textContent
         const jumlahLama = Number(isiJumlah.textContent)
@@ -34,6 +35,7 @@ document.querySelector("form[name=formTambahTransaksi]").onsubmit = function(eve
         isiNamaTransaksi.textContent = inputNamaTransaksi
         isiKategori.textContent = inputKategori
         isiJumlah.textContent = inputJumlah
+        isiTanggal.textContent = inputTanggal
 
         const jumlahBaru = Number(inputJumlah)
         if(inputKategori === "pemasukan"){
@@ -52,6 +54,7 @@ document.querySelector("form[name=formTambahTransaksi]").onsubmit = function(eve
     } else { 
         let isiKeuangan = document.createElement("tr") 
         isiKeuangan.innerHTML = `
+            <td class="isiTanggal">${inputTanggal}</td>
             <td class="isiNamaTransaksi">${inputNamaTransaksi}</td>
             <td class="isiKategori">${inputKategori}</td>
             <td class="isiJumlah">${inputJumlah}</td>
@@ -85,6 +88,7 @@ document.querySelector("form[name=formTambahTransaksi]").onsubmit = function(eve
             document.getElementById("nama").value = isiKeuangan.querySelector(".isiNamaTransaksi").textContent
             document.getElementById("kategori").value = isiKeuangan.querySelector(".isiKategori").textContent
             document.getElementById("jumlah").value = isiKeuangan.querySelector(".isiJumlah").textContent
+            document.getElementById("tanggal").value = isiKeuangan.querySelector(".isiTanggal").textContent
 
             const submit = document.getElementById("submit")
             submit.value = "Edit Transaksi"
