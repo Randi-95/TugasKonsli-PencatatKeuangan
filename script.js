@@ -12,7 +12,7 @@ document.querySelector("form[name=formTambahTransaksi]").onsubmit = function(eve
     const inputKategori = document.getElementById("kategori").value
     const inputTanggal = document.getElementById("tanggal").value
 
-    if(inputNamaTransaksi == "" || inputJumlah == "" || inputKategori ==""){
+    if(inputNamaTransaksi == "" || inputJumlah == "" || inputKategori =="" || inputTanggal == ""){
         alert("isi form transaksi terlebih dahulu")
         return
     }
