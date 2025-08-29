@@ -1,152 +1,132 @@
-body {
-  background-color: #f4f6f9;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #2c3e50;
+.containerTransaksi h2{
+    font-size: 20px;
+    color: #2c3e50;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  padding: 30px;
+.containerTransaksi, .riwayatTransaksi{
+    height: 90vh;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 20px;
+    background-color: #f4f6f9;
+}
+body{
+    background-color: #f4f6f9;
 }
 
-.containerTransaksi, 
-.riwayatTransaksi {
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.formTambahTransaksi{
+    display: flex;
+    flex-direction: column;
 }
 
-.containerTransaksi:hover, 
-.riwayatTransaksi:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+.formTambahTransaksi label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 3px;
 }
 
-h2 {
-  font-size: 22px;
-  margin-bottom: 15px;
-  border-left: 4px solid #2ecc71;
-  padding-left: 10px;
+.formTambahTransaksi input{
+    padding-inline: 8px;
+    height: 30px;
+    border-radius: 6px;
+    border: 1px solid #2c3e50;
+    outline: none;
 }
 
-.formTambahTransaksi {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.formTambahTransaksi input::placeholder{
+    font-size: 12px;
 }
 
-.formTambahTransaksi label {
-  font-weight: 600;
-  font-size: 14px;
+.formTambahTransaksi select{
+    height: 30px;
+    outline: none;
 }
 
-.formTambahTransaksi input,
-.formTambahTransaksi select {
-  padding: 8px 10px;
-  border: 1px solid #dcdfe6;
-  border-radius: 8px;
-  font-size: 14px;
-  transition: border-color 0.2s ease;
+#submit{
+    margin-top: 10px;
+    background-color: #2ecc71;
+    color: white;
+    font-weight: 600;
+    border: none;
+    padding: 5px 0;
+    cursor: pointer;
 }
 
-.formTambahTransaksi input:focus,
-.formTambahTransaksi select:focus {
-  border-color: #2ecc71;
-  outline: none;
-}
-
-#submit {
-  background-color: #2ecc71;
-  color: white;
-  font-weight: 600;
-  border: none;
-  padding: 10px 0;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-#submit:hover {
-  background-color: #27ae60;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-  overflow: hidden;
-  border-radius: 8px;
-  overflow-x: auto;
+#submit:hover{
+    background-color: #27ae60;
 }
 
 th, td {
-  padding: 12px;
-  text-align: center;
-  border-bottom: 1px solid #eee;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
 }
 
 th {
-  background: #2c3e50;
-  color: white;
-  font-size: 14px;
+    background: #2c3e50;
+    color: white;
 }
 
-tbody tr:hover {
-  background-color: #f9f9f9;
+table {
+  width: 100%;          
+  border-collapse: collapse;
+  margin: 0 auto;        
 }
 
-.total-box {
-  margin-top: 15px;
-  font-weight: bold;
-  font-size: 16px;
-  color: #27ae60;
-  background: #ecfdf5;
-  padding: 10px;
-  border-radius: 8px;
+.total-box{
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.btnAksi {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
+.riwayatTransaksi h2{
+    font-size: 20px;
+    color: #2c3e50;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.btnEdit, .btnHapus {
-  padding: 5px 8px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 12px;
-  border: none;
-  transition: 0.2s;
+.btnAksi{
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+.btnEdit{
+    cursor: pointer;
+    background-color: #3498db;
+    padding: 2px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+}
+.btnHapus{
+    cursor: pointer;
+    background-color: #e74c3c;
+    padding: 2px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
 }
 
-.btnEdit {
-  background: #3498db;
-  color: #fff;
-}
+@media (max-width:  600px){
+    main{
+        grid-template-columns: 1fr;
+    }
 
-.btnEdit:hover {
-  background: #2980b9;
-}
+    .containerTransaksi, .riwayatTransaksi{
+        height: auto;
+    }
 
-.btnHapus {
-  background: #e74c3c;
-  color: #fff;
-}
-
-.btnHapus:hover {
-  background: #c0392b;
-}
-
-/* ====== Responsive ====== */
-@media (max-width: 768px) {
-  main {
-    grid-template-columns: 1fr;
-  }
+    .riwayatTransaksi{
+        overflow: hidden;
+        overflow-x: auto;
+    }
 }

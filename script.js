@@ -92,16 +92,18 @@ document.querySelector("form[name=formTambahTransaksi]").onsubmit = function(eve
         })
 
         btnHapus.addEventListener("click", function(){
-            const kategori = isiKeuangan.querySelector(".isiKategori").textContent
-            const jumlah = Number(isiKeuangan.querySelector(".isiJumlah").textContent)
+            if(confirm("Yakin ingin hapus transaksi")){
+                const kategori = isiKeuangan.querySelector(".isiKategori").textContent
+                const jumlah = Number(isiKeuangan.querySelector(".isiJumlah").textContent)
 
-            if(kategori === "pemasukan"){
-                totalPemasukan -= jumlah
-            } else {
-                totalPengeluaran -= jumlah
+                if(kategori === "pemasukan"){
+                    totalPemasukan -= jumlah
+                } else {
+                    totalPengeluaran -= jumlah
+                }
+                updateTotal()
+                isiKeuangan.remove()
             }
-            updateTotal()
-            isiKeuangan.remove()
         })
 
         if(inputKategori === "pemasukan"){
