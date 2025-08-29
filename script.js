@@ -46,8 +46,9 @@ document.querySelector("form[name=formTambahTransaksi]").onsubmit = function(eve
         const submit = document.getElementById("submit")
         submit.value = "+Tambah Transaksi"
         submit.style.backgroundColor = "#2ecc71"
-
         updateTotal()
+
+        document.forms["formTambahTransaksi"].reset()
     } else { 
         let isiKeuangan = document.createElement("tr") 
         isiKeuangan.innerHTML = `
@@ -121,5 +122,7 @@ document.querySelector("form[name=formTambahTransaksi]").onsubmit = function(eve
 
 function updateTotal(){
     totalSaldo = totalPemasukan - totalPengeluaran
-    document.getElementById("total").textContent = totalSaldo
+    document.getElementById("saldo-akhir").textContent = totalSaldo
+    document.getElementById("total-pemasukan").textContent = totalPemasukan
+    document.getElementById("total-pengeluaran").textContent = totalPengeluaran
 }
